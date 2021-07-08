@@ -12,4 +12,6 @@
 
 Работу выполнили: Александр  Avatar
 AlexanderProskura
- Проскура, Александр ParovozikxD Пшеничников, Кирилл  Рюмин, Даниил  Отмахов, Дмитрий sir-mitra Наумов
+ Проскура, Александр ParovozikxD Пшеничников, Кирилл  Avatar
+Lageer1234
+ Рюмин, Даниил DaniilOtm Отмахов, Дмитрий sir-mitra Наумов
