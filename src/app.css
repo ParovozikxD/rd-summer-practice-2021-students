@@ -64,3 +64,16 @@ main {
   height: 25px;
   background: white;
 }
+
+#app-controls button { 
+  cursor: pointer;
+  font-size: 24px;
+}
+
+#app-controls {  
+display:flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+}
+
