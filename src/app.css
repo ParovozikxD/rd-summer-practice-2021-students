@@ -1,0 +1,66 @@
+body {
+  background: black;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 700px;
+  width: 90%;
+  max-width: 1280px;
+  background-color: #b4faa2;
+}
+
+#score {
+
+  width: 20%;
+  border: 2px solid black;
+}
+
+#app-wrapper {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#app-screen {
+  height: 600px;
+  border: 2px solid black;
+}
+
+#app-controls {
+
+  height: 100px;
+  border: 2px solid black;
+}
+
+#game-log {
+  width: 20%;
+  border: 2px solid black;
+}
+
+#timer-scale {
+  height: 25px;
+  background: grey;
+  border: 2px solid black;
+}
+
+#full-scale {
+  width: 70%;
+  height: 25px;
+  background: white;
+}
