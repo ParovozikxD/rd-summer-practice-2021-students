@@ -795,13 +795,13 @@
             function getImages() {
                 // TODO Task1.3 Объявление переменных и их связка с DOM
                 return {
-                    imgHeart:$('#img_heart'),
-                    imgCoin:$('#img_coin'),
-                    imgPolice: $('#img_police'),
-                    imgPoliceSelf: $('#img_police_self'),
-                    imgThief: $('#img_thief'),
-                    imgThiefSelf: $('#img_thief_self'),
-                    imgSwitch: $('#img_switch'),
+                    imgHeart:$('#img_heart').get(0),
+                    imgCoin:$('#img_coin').get(0),
+                    imgPolice: $('#img_police').get(0),
+                    imgPoliceSelf: $('#img_police_self').get(0),
+                    imgThief: $('#img_thief').get(0),
+                    imgThiefSelf: $('#img_thief_self').get(0),
+                    imgSwitch: $('#img_switch').get(0),
                 };
             }
             function setMapCanvasSizing($canvas, width, height) {
