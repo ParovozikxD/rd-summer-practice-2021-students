@@ -782,14 +782,14 @@
             function getButtons() {
                 // TODO Task1.2 Объявление переменных и их связка с DOM
                 return {
-                    // $btnGameList:,
-                    // $btnStart:,
-                    // $btnConnect:,
-                    // $btnConnectPolice:,
-                    // $btnConnectThief:,
-                    // $btnLeave:,
-                    // $btnPause:,
-                    // $btnCancel:
+                     $btnGameList:$('#BttnList'),
+                     $btnStart:$('#BttnStart'),
+                     $btnConnect:$('#BttnConnect'),
+                     $btnConnectPolice:$('#BttnPolice'),
+                     $btnConnectThief:$('#BttnThiefs'),
+                     $btnLeave:$('#BttnExit'),
+                     $btnPause:$('#BttnPause'),
+                     $btnCancel:$('#BttnCancel'),
                 };
             }
             function getImages() {
