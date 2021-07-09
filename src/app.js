@@ -760,20 +760,20 @@
                 return {
                     // $gameCaption: ,
                     // $switchTimer: ,
-                    // team1: {
-                    //     $container: ,
-                    //     $caption: ,
-                    //     $players: ,
-                    //     $lives: ,
-                    //     $coins:
-                    // },
-                    // team2: {
-                    //     $container: ,
-                    //     $caption: ,
-                    //     $players: ,
-                    //     $lives: ,
-                    //     $coins:
-                    // },
+                    team1: {
+                    //$container: ,
+                    $caption: $('#tagteam1'),
+                    //$players: ,
+                    $lives: $('#lifeteam1'),
+                    $coins: $('#coinsteam1'),
+                    },
+                     team2: {
+                    //$container: ,
+                    $caption: $('#tagteam2'),
+                    //$players: ,
+                    $lives: $('#lifeteam2'),
+                    $coins: $('#coinsteam2'),
+                    },
                     // mapBuffer: null,
                     // $mapCanvas: ,
                     // mapCellSize: 25
