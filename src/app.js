@@ -898,23 +898,23 @@
                      * TODO Task 4. Вместо event.keyCode начните использовать event.key (done)
                      */
                     switch (event.key) {
-                        case Space:
+                        case ' ':
                             event.preventDefault();
                             this.state.game.stopMoving();
                             break;
-                        case ArrowLeft:
+                        case 'ArrowLeft':
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.left);
                             break;
-                        case ArrowUp:
+                        case 'ArrowUp':
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.top);
                             break;
-                        case ArrowRight:
+                        case 'ArrowRight':
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.right);
                             break;
-                        case ArrowDown:
+                        case 'ArrowDown':
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.bottom);
                             break;
