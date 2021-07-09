@@ -756,6 +756,9 @@
                  *  Для получения доступа к DOM элементу следует
                  *  использовать document.getElementById('elementId')
                  *  можно использовать $('selector')
+                 * 
+                 * (need complete)
+                 * 
                  */
                 return {
                     // $gameCaption: ,
@@ -780,7 +783,7 @@
                 };
             }
             function getButtons() {
-                // TODO Task1.2 Объявление переменных и их связка с DOM
+                // TODO Task1.2 Объявление переменных и их связка с DOM (done)
                 return {
                      $btnGameList:$('#BttnList'),
                      $btnStart:$('#BttnStart'),
@@ -793,7 +796,7 @@
                 };
             }
             function getImages() {
-                // TODO Task1.3 Объявление переменных и их связка с DOM
+                // TODO Task1.3 Объявление переменных и их связка с DOM (done)
                 return {
                     imgHeart:$('#img_heart').get(0),
                     imgCoin:$('#img_coin').get(0),
@@ -892,26 +895,26 @@
                         return;
                     }
                     /**
-                     * TODO Task 4. Вместо event.keyCode начните использовать event.key
+                     * TODO Task 4. Вместо event.keyCode начните использовать event.key (done)
                      */
-                    switch (event.keyCode) {
-                        case 32:
+                    switch (event.key) {
+                        case Space:
                             event.preventDefault();
                             this.state.game.stopMoving();
                             break;
-                        case 37:
+                        case ArrowLeft:
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.left);
                             break;
-                        case 38:
+                        case ArrowUp:
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.top);
                             break;
-                        case 39:
+                        case ArrowRight:
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.right);
                             break;
-                        case 40:
+                        case ArrowDown:
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.bottom);
                             break;
