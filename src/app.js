@@ -763,14 +763,14 @@
                     team1: {
                     //$container: ,
                     $caption: $('#tagteam1'),
-                    //$players: ,
+                    $players: $('#playersteam1'),
                     $lives: $('#lifeteam1'),
                     $coins: $('#coinsteam1'),
                     },
                      team2: {
                     //$container: ,
                     $caption: $('#tagteam2'),
-                    //$players: ,
+                    $players: $('#playersteam1'),
                     $lives: $('#lifeteam2'),
                     $coins: $('#coinsteam2'),
                     },
