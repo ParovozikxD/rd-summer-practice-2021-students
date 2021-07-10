@@ -757,29 +757,29 @@
                  *  использовать document.getElementById('elementId')
                  *  можно использовать $('selector')
                  * 
-                 * (need complete)
+                 * (done)
                  * 
                  */
                 return {
-                    // $gameCaption: ,
-                    // $switchTimer: ,
+                    $gameCaption: $('#GameName'), 
+                    $switchTimer: $('#Timer'),
                     team1: {
-                    //$container: ,
+                    $container: $('#team1'),
                     $caption: $('#tagteam1'),
                     $players: $('#playersteam1'),
                     $lives: $('#lifeteam1'),
                     $coins: $('#coinsteam1'),
                     },
-                     team2: {
-                    //$container: ,
+                    team2: {
+                    $container: $('#team2'),
                     $caption: $('#tagteam2'),
                     $players: $('#playersteam1'),
                     $lives: $('#lifeteam2'),
                     $coins: $('#coinsteam2'),
                     },
-                    // mapBuffer: null,
-                    // $mapCanvas: ,
-                    // mapCellSize: 25
+                    mapBuffer: null,
+                    $mapCanvas:$('#app-screen'),
+                    mapCellSize: 25
                 };
             }
             function getButtons() {

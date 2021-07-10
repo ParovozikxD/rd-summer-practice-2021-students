@@ -12,6 +12,12 @@ header {
   color: white;
 }
 
+#SectName{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
 main {
   margin-left: auto;
   margin-right: auto;
@@ -25,7 +31,6 @@ main {
 }
 
 #score {
-
   width: 20%;
   border: 2px solid black;
 }
@@ -55,7 +60,7 @@ main {
 
 #timer-scale {
   height: 25px;
-  background: grey;
+  background: rgb(201, 199, 199);
   border: 2px solid black;
 }
 
@@ -63,6 +68,11 @@ main {
   width: 70%;
   height: 25px;
   background: white;
+}
+
+#Timer{
+  color: black;
+  font-size: 24px;
 }
 
 #app-controls button { 
