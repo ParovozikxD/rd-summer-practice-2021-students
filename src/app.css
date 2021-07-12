@@ -39,7 +39,6 @@ main {
 #app-screen {
   border: 2px solid black;
   height: 370px;
-  background: yellow;
 }
 
 #game-log {

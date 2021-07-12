@@ -773,7 +773,7 @@
                     team2: {
                     $container: $('#team2-container'),
                     $caption: $('#tagteam2'),
-                    $players: $('#playersteam1'),
+                    $players: $('#playersteam2'),
                     $lives: $('#lifeteam2'),
                     $coins: $('#coinsteam2'),
                     },
