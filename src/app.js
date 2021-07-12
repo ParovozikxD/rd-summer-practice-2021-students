@@ -811,13 +811,12 @@
                 /**
                  * TODO Task 2. Опишите функцию которая задаст размеры игрового поля (complete)
                  */
-
-                $canvas.css("width", width + "px")
+                return $canvas
+                
+                .css("width", width + "px")
                 .css("height", height + "px")
                 .attr("width", width + "px")
                 .attr("height", height + "px");
-
-                return $canvas;
             }
             function drawMapField(canvas, map, width, height, cellSize) {
                 var ctx = canvas.getContext("2d");
