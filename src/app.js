@@ -757,6 +757,7 @@
                  *  использовать document.getElementById('elementId')
                  *  можно использовать $('selector')
                  * 
+<<<<<<< HEAD
                  * (complete)
                  * 
                  */
@@ -765,20 +766,38 @@
                     $switchTimer: $('#switch-timer'),
                     team1: {
                     $container: $('#team1-container'),
+=======
+                 * (done)
+                 * 
+                 */
+                return {
+                    $gameCaption: $('#GameName'), 
+                    $switchTimer: $('#Timer'),
+                    team1: {
+                    $container: $('#team1'),
+>>>>>>> dc2849121ea17d8f8a4f4c2873e2bca40e6e043d
                     $caption: $('#tagteam1'),
                     $players: $('#playersteam1'),
                     $lives: $('#lifeteam1'),
                     $coins: $('#coinsteam1'),
                     },
                     team2: {
+<<<<<<< HEAD
                     $container: $('#team2-container'),
+=======
+                    $container: $('#team2'),
+>>>>>>> dc2849121ea17d8f8a4f4c2873e2bca40e6e043d
                     $caption: $('#tagteam2'),
                     $players: $('#playersteam1'),
                     $lives: $('#lifeteam2'),
                     $coins: $('#coinsteam2'),
                     },
                     mapBuffer: null,
+<<<<<<< HEAD
                     $mapCanvas: $('#game-canvas'),
+=======
+                    $mapCanvas:$('#app-screen'),
+>>>>>>> dc2849121ea17d8f8a4f4c2873e2bca40e6e043d
                     mapCellSize: 25
                 };
             }

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="app.css" />
     <!--  TODO: Раскомментировать при начале работы с сервером -->
-<!--    <script src="modernizr.js"></script>-->
-<!--    <script src="/js/jquery.js"></script>-->
-<!--    <script src="/js/jquery.signalR.js"></script>-->
-<!--    <script src="/js/gameApi.js"></script>-->
+    <script src="modernizr.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery.signalR.js"></script>
+    <script src="/js/gameApi.js"></script>
     <title>Игра - Полицейские и Мошенники</title>
     <link rel="stylesheet" href="./app.css">
 </head>
@@ -157,20 +157,19 @@ B5Mj0iMjEiIC8+CjxsaW5lIHgxPSIyMiIgeTE9IjE3IiB4Mj0iMTgiIHkyPSIyMSIgLz4KPC9nP
 go8L3N2Zz4="/>
 </div>
 <!--  TODO: Раскомментировать при начале работы с сервером -->
-<!--<script src="app.js"></script>-->
-<!--<script>-->
-<!--    (function() {-->
-<!--        var gameApi = new GameApi();-->
-<!--        gameApi.questor.on("unauthorized", function () {-->
-<!--            window.location.replace("../login");-->
-<!--        });-->
-<!--        gameApi.questor.login();-->
-<!--        var gameState = new app.game.GameState(gameApi);-->
-<!--        new app.game.GameView($("#game"), $("#loading"), $("#loadError"), gameState);-->
-<!--        gameState.request();-->
-<!--    })();-->
+<script src="app.js"></script>
+<script>
+    (function() {
+        var gameApi = new GameApi();
+        gameApi.questor.on("unauthorized", function () {
+            window.location.replace("../login");
+        });
+        gameApi.questor.login();
+        var gameState = new app.game.GameState(gameApi);
+        new app.game.GameView($("#game"), $("#loading"), $("#loadError"), gameState);
+        gameState.request();
+    })();
 
-<!--</script>-->
-
+</script>
 </body>
 </html>
