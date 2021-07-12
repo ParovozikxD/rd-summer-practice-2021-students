@@ -102,7 +102,7 @@ footer p {
 }
 
 #BttnList:hover{
-  background-color: red;
+  background-color: rgb(37, 150, 255);
 }
 
 #BttnConnect{
@@ -112,7 +112,7 @@ footer p {
 }
 
 #BttnConnect:hover{
-  background-color: rgb(208, 255, 0);
+  background-color: rgb(1, 156, 105);
 }
 
 #BttnPolice{
@@ -153,4 +153,24 @@ footer p {
 
 #BttnCancel:hover{
   background-color: rgb(195, 0, 255);
+}
+
+#BttnStart{
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BttnStart:hover{
+  background-color: rgb(30, 255, 0);
+}
+
+#BttnExit{
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BttnExit:hover{
+  background-color: rgb(255, 0, 0);
 }
