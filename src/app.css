@@ -27,13 +27,9 @@ main {
   width: 90%;
   max-width: 1280px;
 
-<<<<<<< HEAD
 }
 
 #stats-board {
-=======
-#score {
->>>>>>> dc2849121ea17d8f8a4f4c2873e2bca40e6e043d
   width: 20%;
   border: 2px solid white;
   color: white;
@@ -61,17 +57,12 @@ main {
 
 #timer-scale {
   height: 25px;
-<<<<<<< HEAD
   background: black;
   border: 2px solid white;
   position: relative;
   color: white;
   padding: 15px 0 5px;
   text-align: center;
-=======
-  background: rgb(201, 199, 199);
-  border: 2px solid black;
->>>>>>> dc2849121ea17d8f8a4f4c2873e2bca40e6e043d
 }
 
 #app-controls {
