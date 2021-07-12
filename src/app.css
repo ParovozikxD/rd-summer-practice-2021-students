@@ -7,8 +7,8 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: center;
+  margin: auto;
+  text-align: center;
   color: white;
 }
 
@@ -18,63 +18,58 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 700px;
   width: 90%;
   max-width: 1280px;
-  background-color: #b4faa2;
+
 }
 
-#score {
-
+#stats-board {
   width: 20%;
-  border: 2px solid black;
+  border: 2px solid white;
+  color: white;
 }
 
 #app-wrapper {
-  width: 60%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: black;
 }
 
 #app-screen {
-  height: 600px;
-  border: 2px solid black;
-}
-
-#app-controls {
-
-  height: 100px;
-  border: 2px solid black;
+  border: 2px solid white;
+  height: 370px;
+  background: yellow;
 }
 
 #game-log {
   width: 20%;
-  border: 2px solid black;
+  border: 2px solid white;
+  color: white;
 }
 
 #timer-scale {
   height: 25px;
-  background: grey;
-  border: 2px solid black;
+  background: black;
+  border: 2px solid white;
+  position: relative;
+  color: white;
+  padding: 15px 0 5px;
+  text-align: center;
 }
 
-#full-scale {
-  width: 70%;
-  height: 25px;
-  background: white;
+#app-controls {
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #app-controls button { 
   cursor: pointer;
   font-size: 16px;
-}
-
-#app-controls {  
-display:flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
+  margin: 2px 5px;
 }
 
 ul{

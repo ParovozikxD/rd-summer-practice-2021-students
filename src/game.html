@@ -12,10 +12,79 @@
     <link rel="stylesheet" href="./app.css">
 </head>
 <body>
-<!-- TODO: Task 0. Построить вёрстку приложения по макету используя для сетки bootstrap -->
+
+    <header>
+        <h1>Полицейские и Мошенники</h1>
+        <h2 id="game-caption">NaN</h2>
+    </header>
+
+    <main>
+
+        <div id="loading" class="loading hidden">
+            <h2>Загрука</h2>
+        </div>
+    
+        <div id='loadError' class="loadError hidden" >
+            <h3>Ошибка загрузки</h3>
+        </div>
+
+        <section id="stats-board">
+            <div id="team1-container">
+                <h3>Команда 1: <span id= "tagteam1">NaN</span></h3>
+                <ul><li>Монетки: <span id= "coinsteam1">NaN</span></li>
+                <li>Осталось жизней: <span id= "lifesteam1">NaN</span></li>
+                <li>Игроки: <span id= "playersteam1">NaN</span></li></ul>
+            </div>
+            <div id="team2-container">
+                <h3>Команда 2: <span id= "tagteam2">NaN</span></h3>
+                <ul><li>Монетки: <span id= "coinsteam2">NaN</span></li>
+                <li>Осталось жизней: <span id= "lifeteam2">NaN</span></li>
+                <li>Игроки: <span id= "playersteam2">NaN</span></li></ul>
+            </div>
+        </section>
+    
+    
+        <div id="app-wrapper">
+            <div id="timer-scale">
+                <div id="clock"><span id="switch-timer">00:00</span></div>
+            </div>
+            <div id="app-screen">
+                
+                <canvas id="game-сanvas"> </canvas>
+    
+            </div>
+            <section id="app-controls">
+                <button id="BttnList">Список игр</button>
+                <button id="BttnStart">Старт</button>
+                <button id="BttnConnect">Присоединиться</button>
+                <button id="BttnPolice">Полицейские</button>
+                <button id="BttnThiefs">Мошенники</button>
+                <button id="BttnExit">Выйти</button>
+                <button id="BttnPause">Пауза</button>
+                <button id="BttnCancel">Прервать матч</button>
+            </section>
+        </div>
+    
+        <section id="game-log">
+            <ul>
+                <li>Игра синхронизирована</li>
+                <li>Игрок подключился</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p color="white">Хедер, футер: Проскура</p>
+        <p color="white">Панель: Пшеничников</p>
+        <p color="white">Логи: Отмахов</p>
+        <p color="white">Счет: Рюмин</p>
+        <p color="white">Структура, правки: Наумов</p>    
+    </footer>
+
+
+
 <div class="hidden">
     <img id="img_heart"
-         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJzdmdfaGVhcnQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9
+        src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJzdmdfaGVhcnQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9
 yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIH
 g9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Igp2aWV3Qm94PSIwIDAgM
 jQgMjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBmaWxsPSJyZWQiPgo8Zz4KPGc+CjxwYXRo
@@ -103,56 +172,5 @@ go8L3N2Zz4="/>
 
 <!--</script>-->
 
-<header>
-    <h1>Полицейские и Мошенники</h1>
-</header>
-<main>
-    <section id="score">
-        <h2>Команда 1: <span id= "tagteam1">NaN</span></h2>
-            <ul><li>Монетки: <span id= "coinsteam1">NaN</span></li>
-            <li>Осталось жизней: <span id= "lifesteam1">NaN</span></li>
-            <li>Игроки: <span id= "playersteam1">NaN</span></li></ul>
-            <h2>Команда 2: <span id= "tagteam2">NaN</span></h2>
-            <ul><li>Монетки: <span id= "coinsteam2">NaN</span></li>
-            <li>Осталось жизней: <span id= "lifeteam2">NaN</span></li>
-            <li>Игроки: <span id= "playersteam2">NaN</span></li></ul>
-    </section>
-
-
-    <div id="app-wrapper">
-        <div id="timer-scale">
-            <div id="full-scale"></div>
-        </div>
-        <section id="app-screen">
-            
-            <!-- поле для демонстарции игрового процесса -->
-
-        </section>
-        <section id="app-controls">
-            <button id="BttnList">Список игр</button>
-            <button id="BttnStart">Старт</button>
-            <button id="BttnConnect">Присоединиться</button>
-            <button id="BttnPolice">Полицейские</button>
-            <button id="BttnThiefs">Мошенники</button>
-            <button id="BttnExit">Выйти</button>
-            <button id="BttnPause">Пауза</button>
-            <button id="BttnCancel">Отменить</button>
-        </section>
-    </div>
-
-    <section id="game-log">
-        <ul>
-            <li>Игра синхронизирована</li>
-            <li>Игрок подключился</li>
-        </ul>
-    </section>
-</main>
-<footer>
-    <p color="white">Хедер, футер: Проскура</p>
-    <p color="white">Панель: Пшеничников</p>
-    <p color="white">Логи: Отмахов</p>
-    <p color="white">Счет: Рюмин</p>
-    <p color="white">Структура, правки: Наумов</p>    
-</footer>
 </body>
 </html>
