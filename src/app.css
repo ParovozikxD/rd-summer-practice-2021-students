@@ -89,3 +89,8 @@ footer p {
   padding: 5px;
   margin: 0;
 }
+
+#game-canvas {
+  display: block;
+  margin: 20px auto;
+}
