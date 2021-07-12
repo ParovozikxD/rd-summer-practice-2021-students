@@ -103,6 +103,7 @@ footer p {
 
 #BttnList:hover{
   background-color: rgb(37, 150, 255);
+  cursor: pointer;
 }
 
 #BttnConnect{
