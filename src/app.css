@@ -180,3 +180,18 @@ footer p {
   display: flex;
   justify-content: center;
 }
+
+#gameList {
+  margin: auto;
+  text-align: center;
+}
+
+.header {
+  margin: auto;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid rgb(0, 83, 0);
+  border-radius: 2px;
+}
