@@ -1,7 +1,3 @@
-body {
-  background: black;
-}
-
 .hidden {
   display: none;
 }
@@ -9,7 +5,6 @@ body {
 header {
   margin: auto;
   text-align: center;
-  color: white;
 }
 
 #SectName{
@@ -31,8 +26,7 @@ main {
 
 #stats-board {
   width: 20%;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid black;
 }
 
 #app-wrapper {
@@ -40,25 +34,23 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: black;
 }
 
 #app-screen {
-  border: 2px solid white;
+  border: 2px solid black;
   height: 370px;
   background: yellow;
 }
 
 #game-log {
   width: 20%;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid black;
 }
 
 #timer-scale {
   height: 25px;
   background: black;
-  border: 2px solid white;
+  border: 2px solid black;
   position: relative;
   color: white;
   padding: 15px 0 5px;
@@ -66,7 +58,7 @@ main {
 }
 
 #app-controls {
-  border: 2px solid white;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
