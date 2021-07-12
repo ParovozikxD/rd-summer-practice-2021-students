@@ -94,3 +94,63 @@ footer p {
   display: block;
   margin: 20px auto;
 }
+
+#BttnList{
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BttnList:hover{
+  background-color: red;
+}
+
+#BttnConnect{
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BttnConnect:hover{
+  background-color: rgb(208, 255, 0);
+}
+
+#BttnPolice{
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BttnPolice:hover{
+  background-color: rgb(25, 0, 255);
+}
+
+#BttnThiefs{
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BttnThiefs:hover{
+  background-color: rgb(255, 123, 0);
+}
+
+#BttnPause{
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BttnPause:hover{
+  background-color: rgb(0, 255, 242);
+}
+
+#BttnCancel{
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BttnCancel:hover{
+  background-color: rgb(195, 0, 255);
+}
