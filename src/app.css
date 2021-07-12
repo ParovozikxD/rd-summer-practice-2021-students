@@ -38,7 +38,6 @@ main {
 
 #app-screen {
   border: 2px solid black;
-  height: 370px;
 }
 
 #game-log {
@@ -93,6 +92,7 @@ footer p {
 #game-canvas {
   display: block;
   margin: 20px auto;
+  height: 500px;
 }
 
 #BttnList{
@@ -174,4 +174,9 @@ footer p {
 
 #BttnExit:hover{
   background-color: rgb(255, 0, 0);
+}
+
+#app-screen {
+  display: flex;
+  justify-content: center;
 }
