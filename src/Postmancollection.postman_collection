@@ -1,0 +1,800 @@
+{
+	"info": {
+		"_postman_id": "702fd84f-2c50-4f75-a1fe-4dd919a95e1c",
+		"name": "Practice 2021",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"CheckToken\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.token_type).to.eql(\"bearer\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"variable_key\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "AlexanderPkv1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "AlexanderPkv1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://52.191.9.145:8085/token",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInformationAboutUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"CheckCorrectId\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(\"e0ab545eda644d659eaf8bf64626793d\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/me",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var rndValue = Math.floor(Math.random() * 100000) + 99999\r",
+							"pm.environment.set(\"rndValueEnv\", rndValue);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"CheckNativeName\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.nativeName).to.eql(\"Alexander Pshenichnikov\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"CheckavailabilityId\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "login",
+							"value": "User{{rndValueEnv}}",
+							"type": "text"
+						},
+						{
+							"key": "nativeName",
+							"value": "Alexander Pshenichnikov",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "razdvatri1",
+							"type": "text"
+						},
+						{
+							"key": "confirmPassword",
+							"value": "razdvatri1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/user",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewInformationAboutUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"CheckId\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(\"e0ab545eda644d659eaf8bf64626793d\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "NativeName",
+							"value": "Alexander Pkva",
+							"type": "text"
+						},
+						{
+							"key": "Role",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "OldPassword",
+							"value": "AlexanderPkv1",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "AlexanderPkv1",
+							"type": "text"
+						},
+						{
+							"key": "ConfirmPassword",
+							"value": "AlexanderPkv1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/user/e0ab545eda644d659eaf8bf64626793d",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"user",
+						"e0ab545eda644d659eaf8bf64626793d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInformationAboutUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"CheckavailabilityId\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/user/f8717d5eb8874fd4a58e827034cff68b",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"user",
+						"f8717d5eb8874fd4a58e827034cff68b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMapsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"CheckavailabilityId\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/map",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"map"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateNewGame",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var rndValue = Math.floor(Math.random() * 100000) + 99999\r",
+							"pm.environment.set(\"rndValueEnv\", rndValue);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"GameID\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"CheckAvailableLogin\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"AlexanderPkv1\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Name",
+							"value": "Game{{rndValueEnv}}",
+							"type": "text"
+						},
+						{
+							"key": "MapId",
+							"value": "89f76ef11b58469abb7ca070ae5c6264",
+							"type": "text"
+						},
+						{
+							"key": "SwitchTimeout",
+							"value": "60000",
+							"type": "text"
+						},
+						{
+							"key": "StartupTeamLives",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "PoliceSpeed",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "ThiefSpeed",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/game",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"game"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGamesList",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"EntitiesPresent\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/game?start=0&count=50",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"game"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "0"
+						},
+						{
+							"key": "count",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInformationAboutGame",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"OwnerCheck\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"owner\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/game/{{GameID}}",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"game",
+						"{{GameID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGamesListFromUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"CheckOwner\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"owner\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/games",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteGame",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete success\", function () {\r",
+							"    pm.response.to.have.status(202); \r",
+							"});\r",
+							"\r",
+							"pm.test(\"No Content\", function () {\r",
+							"    pm.response.to.have.status(204); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/game/{{GameID}}",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"game",
+						"{{GameID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMapsListFromUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"CheckLogin\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"AlexanderPkv1\"); \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{variable_key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://52.191.9.145:8085/api/user/e0ab545eda644d659eaf8bf64626793d/maps",
+					"protocol": "http",
+					"host": [
+						"52",
+						"191",
+						"9",
+						"145"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"user",
+						"e0ab545eda644d659eaf8bf64626793d",
+						"maps"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
